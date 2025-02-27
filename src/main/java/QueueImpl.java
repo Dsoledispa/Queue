@@ -9,26 +9,41 @@ public class QueueImpl<E> implements Queue<E>{
 
     public void push(E e) throws FullQueueException {
         // TO-DO
-        if (isFull()) throw new FullQueueException();
-
+        int numero=this.p;
+        if (isFull(numero)) throw new FullQueueException();
+        System.out.println(e);
         this.data[this.p++]=e;
 
     }
 
 
+    @Override
     public E pop() throws EmptyQueueException {
         // TO-DO
-        return null;
+        int numero=this.p;
+        if (isEmpty(numero)) throw new EmptyQueueException();
+        E removedElement = data[this.p-1];
+        this.p= this.p -1;
+        return removedElement;
     }
 
-    private boolean isFull() {
+    private boolean isFull(int numero) {
         // TO-DO
-        return false;
+        if (numero >=5) {
+            return true;
+        } else{
+            return false;
+        }
+
     }
 
-    private boolean isEmpty() {
+    private boolean isEmpty(int numero) {
         // TO-DO
-        return false;
+        if (numero >0) {
+            return false;
+        } else{
+            return true;
+        }
     }
 
     public int size() {

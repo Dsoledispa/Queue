@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Hola");
         Queue<Integer> q = new QueueImpl<Integer>(5);
         try {
             q.push(1);
@@ -39,7 +40,7 @@ public class Main {
             int v;
             while (q.size() > 0) {
                 v = q.pop();
-                System.out.println(v);
+                System.out.println("Elemento eliminado "+v);
             }
 
             q.pop();
